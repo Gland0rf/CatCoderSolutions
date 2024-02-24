@@ -27,71 +27,7 @@ def is_time_in_range(hours, minutes, seconds, start_time, end_time):
 
 for file in files:
     content = open(dir_path + "/" + file, "r").read().split("\n")
-    #LEVEL 1 // 3
-    """firstRectangle = content[0].split(",")
-    amountPositions = int(content[1])
-    del content[0:2]
-    
-    northBorder = float(firstRectangle[0])
-    eastBorder = float(firstRectangle[1])
-    southBorder = float(firstRectangle[2])
-    westBorder = float(firstRectangle[3])
-    
-    carsInRect = []
-    
-    for carSpotted in content:
-        if(carSpotted != ""):
-            carSpotted = carSpotted.split(",")
-            identity = carSpotted[0]
-            time = carSpotted[1]
-            latitude = float(carSpotted[2])
-            longitude = float(carSpotted[3])
-            #Check if in boundaries
             
-            if(southBorder < latitude < northBorder and westBorder < longitude < eastBorder):
-                if identity not in carsInRect:
-                    carsInRect.append(identity)"""
-                
-    #LEVEL 2
-    """amountSpotted = content[0]
-    del content[0]
-    
-    farthestLatitude = -1
-    farthestLatitudeCar = ""
-    farthestLatitudeTime = ""
-    farthestLongitude = -1
-    farthestLongitudeCar = ""
-    farthestLongitudeTime = ""
-    
-    for carSpotted in content:
-        if(carSpotted != ""):
-            carSpotted = carSpotted.split(",")
-            identity = carSpotted[0]
-            time = carSpotted[1]
-            latitude = float(carSpotted[2])
-            longitude = float(carSpotted[3])
-            
-            if(latitude > farthestLatitude or farthestLatitude == -1):
-                farthestLatitude = latitude
-                farthestLatitudeCar = identity
-                farthestLatitudeTime = time
-            if(longitude > farthestLongitude or farthestLongitude == -1):
-                farthestLongitude = longitude
-                farthestLongitudeCar = identity
-                farthestLongitudeTime = time"""
-      
-    #LEVEL 3 
-    """sorted_cars = sorted(carsInRect)
-    final_str = ""
-    for car in sorted_cars:
-        if(final_str == ""):
-            final_str += car
-        else:
-            final_str += "," + car"""
-            
-            
-            
-    #LEVEL 4
     amount_points_start_polygon = int(content[0])
     pointsStartPolygon = []
     
@@ -153,5 +89,4 @@ for file in files:
         else:
             final_str += "," + car
             
-    print(final_str + "\n\n\n")
-    #print(is_inside_polygon((48.6333,15.8531), [(48.6334,15.8532), (48.6334,14.2856), (48.3023,14.2856), (48.3023, 15.8532)]))
+    print(final_str + "\n")
