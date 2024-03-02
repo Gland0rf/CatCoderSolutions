@@ -1,3 +1,5 @@
+import os
+
 def convertToSec(time):
     timeSplit = time.split(":")
     hours = int(timeSplit[0])
@@ -24,19 +26,19 @@ def convertToNotation(time):
     finalStr = hours + ":" + minutes + ":" + time
     return finalStr
 
-submissionList = {}
+dir_path = "./input"
+files = os.listdir(dir_path)
 
-while True:
+for file in files:
     
-    inputText = input("Input text:\n")
-
-    splitInput = inputText.split(" ")
+    splitInput = open(dir_path + "/" + file, "r").read().split(" ")
 
     startTime = convertToSec(splitInput[0])
     taskValue = int(splitInput[1])
     submissions = splitInput[2]
     del splitInput[0:3]
     
+    submissionList = {}
     taskPoints = {}
     userPoints = {}
     
@@ -106,5 +108,3 @@ while True:
         finalStr += f"{sorted_points[uid]} {uid} "
         
     print("\n" + finalStr)
-    
-    submissionList.clear()
